@@ -1,0 +1,77 @@
+# Home Assistant add-on manifest (ADR 0003).
+name: Hemma hub
+description: Notifications and the nursery for the Hemma iOS app
+version: "0.1.0"
+slug: hemma_hub
+url: https://github.com/ogglord/ha-addons
+arch: [aarch64, amd64]
+image: ghcr.io/ogglord/hemma-hub-{arch}
+init: false
+startup: application
+# The Supervisor gives the add-on SUPERVISOR_TOKEN for HA's API.
+homeassistant_api: true
+ingress: true
+ingress_port: 8787
+ports:
+  8787/tcp: 8787
+ports_description:
+  8787/tcp: Hemma app on the LAN
+options:
+  # How phones reach this add-on on the home Wi-Fi.
+  lan_url: http://homeassistant.local:8787
+  tunnel_url: https://hemma.ogglord.com
+  cf_access_client_id: ""
+  cf_access_client_secret: ""
+  apns_team_id: ""
+  apns_key_id: ""
+  apns_key: ""
+  go2rtc_url: http://homelab.local:1984
+  home_ssids: []
+  # Placeholders: this file is published to a public repo (ADR 0003), so the
+  # real rooms (Frigate entity prefix and go2rtc stream per room) are set in the
+  # add-on's Configuration in HA, never here.
+  rooms:
+    - id: room1
+      name: Room 1
+      entity: camera_entity_prefix
+      camera: go2rtc_stream
+      sub: go2rtc_stream_sub
+  # The same keys as hub/hemma.yaml's nursery section.
+  nursery:
+    off_at: "23:00"
+    nap_from: "09:00"
+    nap_until: "17:00"
+    nap_max_minutes: 180
+    crying_seconds: 5
+    escalate_seconds: 60
+    speaker: ""
+    tts: tts.google_translate_en_com
+    quiet_after_ack_minutes: 10
+    camera_offline_seconds: 60
+schema:
+  lan_url: url
+  tunnel_url: str?
+  cf_access_client_id: str?
+  cf_access_client_secret: password?
+  apns_team_id: str?
+  apns_key_id: str?
+  apns_key: password?
+  go2rtc_url: url
+  home_ssids: [str]
+  rooms:
+    - id: str
+      name: str
+      entity: str
+      camera: str
+      sub: str?
+  nursery:
+    off_at: match(^([01]\d|2[0-3]):[0-5]\d$)
+    nap_from: match(^([01]\d|2[0-3]):[0-5]\d$)
+    nap_until: match(^([01]\d|2[0-3]):[0-5]\d$)
+    nap_max_minutes: int(0,)
+    crying_seconds: int(0,)
+    escalate_seconds: int(0,)
+    speaker: str?
+    tts: str
+    quiet_after_ack_minutes: int(0,)
+    camera_offline_seconds: int(0,)
