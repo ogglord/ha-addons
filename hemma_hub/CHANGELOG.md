@@ -3,6 +3,10 @@
 HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 heading for each release; fill in what changed.
 
+## 0.1.1
+
+- Options `frigate_url` and `outdoor`, which the hub already read: set them to get the Utomhus tab.
+
 ## 0.1.0
 
 - First add-on build: notifications, the nursery, pairing, live video.
