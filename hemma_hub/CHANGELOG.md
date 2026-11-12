@@ -3,6 +3,10 @@
 HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 heading for each release; fill in what changed.
 
+## 0.1.6
+
+- Lyssna plays again. In 0.1.5 the audio stream never started in the add-on: ffmpeg could not open the output for the level meter on Linux and exited at once, so the app got no sound and no level.
+
 ## 0.1.5
 
 - Lyssna has gain: new option `listen_gain_db` (0-40, default 20), with a limiter so a cry can't clip. A sleeping child's room sits near the camera's noise floor (about -70 dBFS), which the Tapo app plays back louder than a raw RTSP stream; at +20 dB breathing and household noise are audible.
