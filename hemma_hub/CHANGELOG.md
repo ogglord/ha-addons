@@ -4,6 +4,11 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.17
+
+- The add-on log no longer fills with ffmpeg "No such file or directory"
+  errors when a live stream stops (no viewers left, or Integritetsläge).
+
 ## 0.1.16
 
 - Privatläge is now called Integritetsläge, in HA too: the helpers
