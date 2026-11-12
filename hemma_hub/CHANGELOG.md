@@ -3,6 +3,11 @@
 HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 heading for each release; fill in what changed.
 
+## 0.1.10
+
+- The snapshot carries the sun's elevation (`sun_elevation`, from HA's
+  `sun.sun`), for the sky in the app's house drawing.
+
 ## 0.1.9
 
 - Lyssna has noise reduction: about 12 dB less hiss. Very faint sounds get a little fainter too (quiet speech about 4 dB), so there is a new option `listen_denoise` (default on) to turn it off.
