@@ -4,12 +4,6 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
-## 0.1.15
-
-- Privatläge's timer in HA starts cleared when the hub creates it. Before,
-  privacy mode turned on in the Tapo app could be turned off by HA within
-  5 minutes.
-
 ## 0.1.14
 
 - The snapshot says which nurseries have Privatläge and how long it lasts
