@@ -3,6 +3,11 @@
 HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 heading for each release; fill in what changed.
 
+## 0.1.12
+
+- The nursery switch in HA is now called "Gråtlarm" (was "Barnen sover"), and
+  the hub renames an existing helper when its name in the settings changes.
+
 ## 0.1.11
 
 - The hub remembers which app build each phone runs, and `/v1/me` tells a
