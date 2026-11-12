@@ -4,6 +4,12 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.16
+
+- Privatläge is now called Integritetsläge, in HA too: the helpers
+  "Hemma: <room> integritetsläge till" and the automation
+  "Hemma: integritetsläge av".
+
 ## 0.1.15
 
 - Privatläge's timer in HA starts cleared when the hub creates it. Before,
