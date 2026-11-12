@@ -1,7 +1,8 @@
 # Changelog
 
 HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
-heading for each release; fill in what changed.
+section for each release, drafted from the commit titles; rewrite it for the
+family.
 
 ## 0.1.12
 
