@@ -3,6 +3,10 @@
 HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 heading for each release; fill in what changed.
 
+## 0.1.8
+
+- Lyssna filters out rumble below 100 Hz. Nobody hears it, but it was most of the level in a silent room, so the level meter moved with nothing to hear. A silent room now reads about -66 dB at the default gain (was -52).
+
 ## 0.1.7
 
 - No change to the hub. The first release built by a faster release pipeline.
