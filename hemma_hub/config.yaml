@@ -56,6 +56,7 @@ options:
     tts: tts.google_translate_en_com
     quiet_after_ack_minutes: 10
     camera_offline_seconds: 60
+    privacy_hours: 8
 schema:
   lan_url: url
   tunnel_url: str?
@@ -80,6 +81,7 @@ schema:
       entity: str
       camera: str
       sub: str?
+      privacy_switch: str?
   nursery:
     off_at: match(^([01]\d|2[0-3]):[0-5]\d$)
     nap_from: match(^([01]\d|2[0-3]):[0-5]\d$)
@@ -91,3 +93,4 @@ schema:
     tts: str
     quiet_after_ack_minutes: int(0,)
     camera_offline_seconds: int(0,)
+    privacy_hours: int(1,24)?
