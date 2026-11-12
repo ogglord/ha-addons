@@ -4,6 +4,14 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.18
+
+- The app's new El tab: whether the house uses more electricity than usual
+  this week, the price per kWh now against the last 30 days with today's
+  hours, and the metered plugs. Set it up under `electricity` in the
+  add-on's Configuration (the same keys as `hub/hemma.yaml`). Without it the
+  tab says there is no electricity data.
+
 ## 0.1.17
 
 - The add-on log no longer fills with ffmpeg "No such file or directory"
