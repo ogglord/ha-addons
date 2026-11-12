@@ -4,6 +4,11 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.19
+
+- The add-on log starts each run with a large HEMMA banner, the hub's version
+  and the time it started, so it's easy to see where the latest start begins.
+
 ## 0.1.18
 
 - The app's new El tab: whether the house uses more electricity than usual
