@@ -4,6 +4,12 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.20
+
+- Ready for the app's next Utomhus: each outdoor camera's events from the
+  last ten days, an event's picture in full size, and its clip from Frigate's
+  recording, also away from home. Only the outdoor cameras' events are shown.
+
 ## 0.1.19
 
 - The add-on log starts each run with a large HEMMA banner, the hub's version
