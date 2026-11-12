@@ -3,6 +3,10 @@
 HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 heading for each release; fill in what changed.
 
+## 0.1.9
+
+- Lyssna has noise reduction: about 12 dB less hiss. Very faint sounds get a little fainter too (quiet speech about 4 dB), so there is a new option `listen_denoise` (default on) to turn it off.
+
 ## 0.1.8
 
 - Lyssna filters out rumble below 100 Hz. Nobody hears it, but it was most of the level in a silent room, so the level meter moved with nothing to hear. A silent room now reads about -66 dB at the default gain (was -52).

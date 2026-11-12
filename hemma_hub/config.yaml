@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest (ADR 0003).
 name: Hemma hub
 description: Notifications and the nursery for the Hemma iOS app
-version: "0.1.8"
+version: "0.1.9"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
 arch: [aarch64, amd64]
@@ -31,6 +31,8 @@ options:
   home_ssids: []
   # Gain on Lyssna's sound, dB (0-40). A sleeping child's room is near the camera's noise floor.
   listen_gain_db: 20
+  # Noise reduction on Lyssna's sound: less hiss; very faint sounds get a little fainter.
+  listen_denoise: true
   # Utomhus cameras: camera is the go2rtc/Frigate name, sub the lighter stream.
   outdoor: []
   # Placeholders: this file is published to a public repo (ADR 0003), so the
@@ -66,6 +68,7 @@ schema:
   frigate_url: str?
   home_ssids: [str]
   listen_gain_db: int(0,40)
+  listen_denoise: bool?
   outdoor:
     - id: str
       name: str
