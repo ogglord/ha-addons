@@ -44,6 +44,15 @@ options:
       entity: camera_entity_prefix
       camera: go2rtc_stream
       sub: go2rtc_stream_sub
+  # The El tab: the same keys as hub/hemma.yaml's electricity section. Empty
+  # price: no electricity data. Set in the add-on's Configuration in HA.
+  electricity:
+    price: ""
+    spot: ""
+    vat_percent: 25
+    energy: ""
+    power: ""
+    plugs: []
   # The same keys as hub/hemma.yaml's nursery section.
   nursery:
     off_at: "23:00"
@@ -82,6 +91,18 @@ schema:
       camera: str
       sub: str?
       privacy_switch: str?
+  electricity:
+    price: str?
+    spot: str?
+    vat_percent: int(0,100)?
+    energy: str?
+    power: str?
+    plugs:
+      - id: str
+        name: str
+        power: str
+        cost_today: str?
+        cost_week: str?
   nursery:
     off_at: match(^([01]\d|2[0-3]):[0-5]\d$)
     nap_from: match(^([01]\d|2[0-3]):[0-5]\d$)
