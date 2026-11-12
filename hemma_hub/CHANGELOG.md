@@ -4,6 +4,14 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.13
+
+- Privatläge: a phone can put a nursery camera in its own privacy mode, with
+  no picture, sound or alerts from that room. Only the phone that started it
+  can end it; otherwise it ends by itself after 8 hours (`privacy_hours`).
+  A room opts in with `privacy_switch`: the HA switch for the camera's
+  privacy mode (from the TP-Link integration). Without it, nothing changes.
+
 ## 0.1.12
 
 - The nursery switch in HA is now called "Gråtlarm" (was "Barnen sover"), and
