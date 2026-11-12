@@ -4,6 +4,11 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.14
+
+- The snapshot says which nurseries have Privatläge and how long it lasts
+  there (`privacy_hours`), so the app shows the button only where it works.
+
 ## 0.1.13
 
 - Privatläge: a phone can put a nursery camera in its own privacy mode, with
