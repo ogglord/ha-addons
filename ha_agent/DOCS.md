@@ -1,4 +1,4 @@
-# Peer runner
+# HA Agent
 
 Runs the homelab `peer` listener and Claude Code on this box, with no
 terminal and no web UI. Peer requests sent to host `homeassistant` run as
@@ -25,7 +25,7 @@ is not enough: Remote Control refuses it.
 3. Run:
 
    ```sh
-   docker exec -it "$(docker ps -qf name=peer_runner)" claude auth login
+   docker exec -it "$(docker ps -qf name=ha_agent)" claude auth login
    ```
 
 4. Open the link it prints, sign in, and paste the code back.

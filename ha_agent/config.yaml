@@ -1,12 +1,13 @@
 # Home Assistant add-on manifest. This file is published to the public
-# ogglord/ha-addons (peer_runner/), so it holds no personal values: the hub
+# ogglord/ha-addons (ha_agent/), so it holds no personal values: the hub
 # URL and any host-specific policy are set in the add-on's Configuration in HA.
-name: Peer runner
+name: HA Agent
 description: Headless Claude Code and the homelab peer listener
-version: "0.1.2"
-slug: peer_runner
+version: "0.1.3"
+slug: ha_agent
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
+# The image keeps the repo's name (ogglord/ha-peer-runner).
 image: ghcr.io/ogglord/ha-peer-runner-{arch}
 init: false
 startup: services
@@ -42,7 +43,7 @@ options:
   # Auto mode's policy, prose rules. "$defaults" keeps Claude Code's built-ins.
   policy_environment:
     - "$defaults"
-    - "This is the Home Assistant OS box, inside the peer runner add-on. The ha CLI and SUPERVISOR_TOKEN manage Home Assistant, its add-ons and its host."
+    - "This is the Home Assistant OS box, inside the HA Agent add-on. The ha CLI and SUPERVISOR_TOKEN manage Home Assistant, its add-ons and its host."
   policy_allow:
     - "$defaults"
   policy_hard_deny:

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.3
+
+- Renamed HA Agent (slug `ha_agent`, was `peer_runner`). Install it anew:
+  HA treats a new slug as a new add-on.
+
 ## 0.1.2
 
 - `ha-ws-client` (schoolboyqueue/home-assistant-blueprints): HA's WebSocket
