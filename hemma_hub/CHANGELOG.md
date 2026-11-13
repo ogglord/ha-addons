@@ -4,6 +4,13 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.28
+
+- Opening the add-on's Web UI in Home Assistant now shows the hub's health
+  (Home Assistant, push, video, Frigate, ffmpeg, the heartbeat and any alert
+  that didn't get through) instead of a "not paired" error. It reloads
+  every 30 seconds.
+
 ## 0.1.27
 
 - Home Assistant now notices when the hub is down. The hub checks in every
