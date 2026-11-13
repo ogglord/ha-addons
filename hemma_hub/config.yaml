@@ -91,6 +91,7 @@ schema:
       camera: str
       sub: str?
       privacy_switch: str?
+      tapo: str?
   electricity:
     price: str?
     spot: str?
