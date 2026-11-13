@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest (ADR 0003).
 name: Hemma hub
 description: Notifications and the nursery for the Hemma iOS app
-version: "0.1.29"
+version: "0.1.30"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -70,7 +70,9 @@ options:
     crying_seconds: 5
     escalate_seconds: 60
     speaker: ""
-    tts: tts.google_translate_en_com
+    # HA's Piper (Wyoming): local Swedish speech, works without the internet.
+    tts: tts.piper
+    tts_voice: sv_SE-lisa-medium
     quiet_after_ack_minutes: 10
     camera_offline_seconds: 60
     privacy_hours: 8
@@ -127,6 +129,7 @@ schema:
     escalate_seconds: int(0,)
     speaker: str?
     tts: str
+    tts_voice: str?
     quiet_after_ack_minutes: int(0,)
     camera_offline_seconds: int(0,)
     privacy_hours: int(1,24)?

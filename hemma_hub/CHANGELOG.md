@@ -4,6 +4,18 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.30
+
+- The speaker now speaks Swedish, without the internet: it uses Home
+  Assistant's Piper instead of Google's English voice, and names the room
+  ("Ludde gråter i sitt rum."). **After updating, change `tts` in the nursery
+  options to `tts.piper`.** The new `tts_voice` option is the Piper voice
+  (default `sv_SE-lisa-medium`).
+- When a crying alert can't reach a phone (the internet is down, or the hub
+  is), the speaker says it at once instead of after a minute.
+- At start, the hub checks that the speaker's voice exists in Home Assistant
+  and says so in its log and on the health page ("Högtalaren (tal)").
+
 ## 0.1.29
 
 - For the next app: Huset shows the temperature and humidity on each floor,
