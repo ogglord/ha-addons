@@ -4,6 +4,24 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.23
+
+- A security update. **Nothing needs re-pairing:** every phone keeps
+  working as it is, and the app needs no update.
+- A paired phone could reach more of Home Assistant through the hub than the
+  notification pictures it is meant to fetch. That is closed.
+- The pairing code the hub prints in this log for the very first admin phone
+  no longer contains the Cloudflare key, and lasts an hour instead of a day.
+  This only matters on a fresh install: that first phone then works on the
+  home Wi-Fi only, until it is paired again from Admin › Lägg till telefon.
+- While a nursery camera's privacy switch is unavailable (the camera is
+  offline or restarting), the app shows that room as in Integritetsläge and
+  shows no picture or sound from it, until the switch is back.
+- Notifications no longer carry Home Assistant's camera names, and a button
+  on a notification can only do what that notification offered.
+- The add-on no longer runs as root. If it does not start after this update,
+  go back to 0.1.22 from a backup and tell Oscar.
+
 ## 0.1.22
 
 - Ready for the app's camera controls: move a nursery camera up, down, left
