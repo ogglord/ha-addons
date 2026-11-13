@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest (ADR 0003).
 name: Hemma hub
 description: Notifications and the nursery for the Hemma iOS app
-version: "0.1.26"
+version: "0.1.27"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -12,6 +12,9 @@ startup: application
 homeassistant_api: true
 ingress: true
 ingress_port: 8787
+# The Supervisor restarts the add-on when this stops answering. /livez answers
+# whenever the hub runs; /healthz is 503 while HA is away, which is not the hub's fault.
+watchdog: http://[HOST]:[PORT:8787]/livez
 ports:
   8787/tcp: 8787
 ports_description:
@@ -66,6 +69,7 @@ options:
     quiet_after_ack_minutes: 10
     camera_offline_seconds: 60
     privacy_hours: 8
+    hub_down_minutes: 5
 schema:
   lan_url: url
   tunnel_url: str?
@@ -116,3 +120,4 @@ schema:
     quiet_after_ack_minutes: int(0,)
     camera_offline_seconds: int(0,)
     privacy_hours: int(1,24)?
+    hub_down_minutes: int(3,60)?

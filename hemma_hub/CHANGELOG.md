@@ -4,6 +4,21 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.27
+
+- Home Assistant now notices when the hub is down. The hub checks in every
+  minute; after 5 minutes without it (the new `hub_down_minutes` option),
+  HA shows a notification saying alerts are not getting through, and says
+  it on the speaker while Gråtlarm is on. The notification goes away when
+  the hub is back.
+- An alert that didn't reach a phone is no longer silent. The admins get a
+  push about it (at most once an hour) and HA keeps a note. An alert sent
+  without an APNs key now shows in Larmlogg with that reason.
+- If the hub hangs, Home Assistant restarts it (the add-on's watchdog).
+- For the next app: a health page for the admins (Home Assistant, push,
+  video, Frigate, ffmpeg), which phones get no alerts, and the hub's
+  version. The current app works as before.
+
 ## 0.1.26
 
 - A small fix to 0.1.25: when a live video request failed, the add-on's log
