@@ -4,6 +4,13 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.31
+
+- The homelab can notify the admins through Hemma, and send them steps to
+  approve. A new option, `homelab_token`, is the homelab's key to the hub:
+  set it to the same value the homelab has (32 characters or more). Left
+  empty, nothing changes. Approving needs the next app.
+
 ## 0.1.30
 
 - The speaker now speaks Swedish, without the internet: it uses Home

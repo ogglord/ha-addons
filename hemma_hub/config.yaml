@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest (ADR 0003).
 name: Hemma hub
 description: Notifications and the nursery for the Hemma iOS app
-version: "0.1.30"
+version: "0.1.31"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -28,6 +28,9 @@ options:
   apns_team_id: ""
   apns_key_id: ""
   apns_key: ""
+  # The homelab's bearer token, for its notifications and approvals (docs/homelab.md).
+  # At least 32 characters; empty: the homelab is not let in.
+  homelab_token: ""
   go2rtc_url: http://homelab.local:1984
   # Frigate's API, for Utomhus (events, thumbnails). Empty: no outdoor events.
   frigate_url: ""
@@ -85,6 +88,7 @@ schema:
   apns_team_id: str?
   apns_key_id: str?
   apns_key: password?
+  homelab_token: password?
   go2rtc_url: url
   frigate_url: str?
   home_ssids: [str]
