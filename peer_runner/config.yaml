@@ -3,7 +3,7 @@
 # URL and any host-specific policy are set in the add-on's Configuration in HA.
 name: Peer runner
 description: Headless Claude Code and the homelab peer listener
-version: "0.1.1"
+version: "0.1.2"
 slug: peer_runner
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]

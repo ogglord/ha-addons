@@ -52,10 +52,13 @@ claude.ai, or if the refresh token expires unused.
 
 ## What runs can reach
 
-`ha` (the Supervisor CLI), `curl`, `jq`, `yq`, `git`, `ssh`,
+`ha-ws-client` (HA's WebSocket API: states, registries, history, automation traces), `ha` (the Supervisor CLI), `curl`, `jq`, `yq`, `git`, `ssh`,
 `mosquitto_pub`/`mosquitto_sub`, HA's config at `/homeassistant`, and
 `/share`. The add-on has the Supervisor's `manager` role, so it can change
 other add-ons' options (a Mosquitto login, for example).
+
+Every session reads `/etc/claude-code/CLAUDE.md` from the image, which tells
+Claude about these tools. Your own notes can go in `/data/home/.claude/CLAUDE.md`.
 
 Remote Control runs in auto mode as root on this box. Anyone signed in to
 your claude.ai account can start a session here. Turn it off with
