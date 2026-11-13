@@ -4,7 +4,7 @@ description: Notifications and the nursery for the Hemma iOS app
 version: "0.1.24"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
-arch: [aarch64, amd64]
+arch: [amd64]
 image: ghcr.io/ogglord/hemma-hub-{arch}
 init: false
 startup: application
