@@ -4,6 +4,23 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.25
+
+- Alerts are harder to lose. If the connection to Apple's push service has
+  died quietly, the hub notices, opens a new one and sends the alert again
+  (once), instead of failing every alert for a while. It also tries once
+  more when Apple is busy.
+- When Home Assistant restarts, the hub is back within about 5 seconds and
+  its log says how long the gap was. An alert sent while the connection was
+  down still can't arrive, so that gap is visible in the log.
+- A button in the app that Home Assistant does not answer (moving a camera,
+  "Barnen sover") now gives an error after 10 seconds instead of hanging.
+  A camera no longer stays "still moving" afterwards.
+- An error in one alert no longer stops the whole hub.
+- A notification whose `tag` is a number (HA templates turn "123" into one)
+  now arrives instead of failing.
+- Nothing needs re-pairing, and the app needs no update.
+
 ## 0.1.24
 
 - A nursery camera that is really offline (unplugged, or restarting) now
