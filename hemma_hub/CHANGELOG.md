@@ -4,6 +4,14 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.24
+
+- A nursery camera that is really offline (unplugged, or restarting) now
+  shows as "Kameran är offline" in the app. 0.1.23 showed it as in
+  Integritetsläge, which it was not. Still no picture or sound from the room
+  until the camera is back. Nothing needs re-pairing, and the app needs no
+  update.
+
 ## 0.1.23
 
 - A security update. **Nothing needs re-pairing:** every phone keeps
