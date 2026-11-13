@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0
+
+- Log in without SSH: when Claude is logged out, HA Agent sends the sign-in
+  link through Hemma, and you reply with the code (Hemma hub 0.1.32, app
+  0.2.15). Or fire `ha_agent_login` with the code from Developer tools.
+- `claude_token`: a `claude setup-token` token for peer runs, with a warning
+  through Hemma a month before it expires.
+- `notify_script`: where those notifications go (`hemma_notify_admin`).
+
 ## 0.1.3
 
 - Renamed HA Agent (slug `ha_agent`, was `peer_runner`). Install it anew:

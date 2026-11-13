@@ -3,7 +3,7 @@
 # URL and any host-specific policy are set in the add-on's Configuration in HA.
 name: HA Agent
 description: Headless Claude Code and the homelab peer listener
-version: "0.1.3"
+version: "0.2.0"
 slug: ha_agent
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -61,6 +61,12 @@ options:
   # ESJavadex/claude-homeassistant-plugins: HA YAML skills and a hook that
   # checks YAML after every edit, for runs and Remote Control sessions.
   ha_plugin: true
+  # `claude setup-token` (one year) for peer runs. Empty: runs use the
+  # claude.ai login, which Remote Control needs anyway.
+  claude_token: ""
+  # The HA script that reaches the owner's phone (Hemma, with text replies:
+  # hub 0.1.32+). The login link and token warnings go there. Empty: log only.
+  notify_script: hemma_notify_admin
 schema:
   hub_url: url
   allow: [str]
@@ -73,3 +79,5 @@ schema:
   remote_control: bool
   remote_control_name: str
   ha_plugin: bool
+  claude_token: password?
+  notify_script: str?
