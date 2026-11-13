@@ -4,6 +4,13 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.32
+
+- Knappar i notiser kan nu öppna en länk i Safari, eller be om ett kort svar
+  som man skriver direkt i notisen (som i Home Assistants app). Svaret går
+  bara till Home Assistant: hubben varken loggar eller sparar det. Att skriva
+  i notisen kräver nästa version av appen.
+
 ## 0.1.31
 
 - The homelab can notify the admins through Hemma, and send them steps to
