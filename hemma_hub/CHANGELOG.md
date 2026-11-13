@@ -4,6 +4,13 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.21
+
+- Ready for the app's sharper Utomhus: at home, the outdoor cameras can
+  show their full-resolution picture live instead of the small one. The
+  driveway's camera sends a format the live path can't carry, so its sharp
+  picture comes a few seconds behind instead.
+
 ## 0.1.20
 
 - Ready for the app's next Utomhus: each outdoor camera's events from the
