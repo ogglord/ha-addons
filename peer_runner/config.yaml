@@ -1,0 +1,70 @@
+# Home Assistant add-on manifest. This file is published to the public
+# ogglord/ha-addons (peer_runner/), so it holds no personal values: the hub
+# URL and any host-specific policy are set in the add-on's Configuration in HA.
+name: Peer runner
+description: Headless Claude Code and the homelab peer listener
+version: "0.1.0"
+slug: peer_runner
+url: https://github.com/ogglord/ha-addons
+arch: [amd64]
+image: ghcr.io/ogglord/ha-peer-runner-{arch}
+init: false
+startup: services
+boot: auto
+# Seconds the Supervisor waits on stop: peer posts an interrupted run's result.
+timeout: 60
+# Requests change HA itself: add-on options (a Mosquitto login), core
+# config, restarts. `manager` lets the `ha` CLI change other add-ons.
+hassio_api: true
+hassio_role: manager
+homeassistant_api: true
+map:
+  - type: homeassistant_config
+    read_only: false
+  - type: share
+    read_only: false
+# Claude's caches and peer's run worktrees are rebuilt on demand; the login
+# (home/.claude/.credentials.json, home/.claude.json) is kept.
+backup_exclude:
+  - "home/.cache/**"
+  - "home/.claude/cache/**"
+  - "home/.claude/projects/**"
+  - "home/.claude/shell-snapshots/**"
+  - "home/.local/share/claude/**"
+  - "peer/runs/**"
+options:
+  # The peer hub on the tailnet, e.g. http://100.x.y.z:7790. Required.
+  hub_url: null
+  # Tool rules (Claude Code permission syntax). Empty: peer's built-in lists.
+  # Note the built-in deny list includes curl and wget.
+  allow: []
+  deny: []
+  # Auto mode's policy, prose rules. "$defaults" keeps Claude Code's built-ins.
+  policy_environment:
+    - "$defaults"
+    - "This is the Home Assistant OS box, inside the peer runner add-on. The ha CLI and SUPERVISOR_TOKEN manage Home Assistant, its add-ons and its host."
+  policy_allow:
+    - "$defaults"
+  policy_hard_deny:
+    - "$defaults"
+    - "Minting peer enrolment codes or enrolling approver keys"
+  # Model for runs and Remote Control sessions. Empty: Claude's default.
+  model: ""
+  # A git checkout runs work in (one worktree per request), e.g.
+  # /homeassistant if HA's config is a git repo. Empty: /data/work.
+  checkout: ""
+  # Claude Code Remote Control: a session on this box from claude.ai/code or
+  # the Claude app. Needs the claude.ai login (DOCS.md).
+  remote_control: true
+  remote_control_name: Home Assistant
+schema:
+  hub_url: url
+  allow: [str]
+  deny: [str]
+  policy_environment: [str]
+  policy_allow: [str]
+  policy_hard_deny: [str]
+  model: str?
+  checkout: str?
+  remote_control: bool
+  remote_control_name: str
