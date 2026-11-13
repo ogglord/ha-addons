@@ -4,6 +4,14 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.22
+
+- Ready for the app's camera controls: move a nursery camera up, down, left
+  or right, and change a few of its settings (step size, night vision, status
+  light, flip, microphone). To turn it on, add `tapo:` to each room in
+  Configuration: the camera's prefix in HA, e.g. `bedroom_ludvig` for
+  `button.bedroom_ludvig_move_up`.
+
 ## 0.1.21
 
 - Ready for the app's sharper Utomhus: at home, the outdoor cameras can
