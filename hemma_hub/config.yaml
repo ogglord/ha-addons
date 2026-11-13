@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest (ADR 0003).
 name: Hemma hub
 description: Notifications and the nursery for the Hemma iOS app
-version: "0.1.28"
+version: "0.1.29"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -56,6 +56,11 @@ options:
     energy: ""
     power: ""
     plugs: []
+  # Huset's temperature and humidity sensors: the same keys as hub/hemma.yaml's
+  # climate section. Set in the add-on's Configuration in HA.
+  climate: []
+  # The temperature outside in Huset: a weather entity, e.g. weather.forecast_home.
+  weather: ""
   # The same keys as hub/hemma.yaml's nursery section.
   nursery:
     off_at: "23:00"
@@ -108,6 +113,11 @@ schema:
         power: str
         cost_today: str?
         cost_week: str?
+  climate:
+    - place: list(bedroom|bath_upstairs|kitchen|hall|living|cellar_hall|bath_downstairs|cinema|upper|main|basement)
+      temperature: str
+      humidity: str?
+  weather: str?
   nursery:
     off_at: match(^([01]\d|2[0-3]):[0-5]\d$)
     nap_from: match(^([01]\d|2[0-3]):[0-5]\d$)

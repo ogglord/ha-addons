@@ -4,6 +4,15 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.29
+
+- For the next app: Huset shows the temperature and humidity on each floor,
+  and the temperature outside. Two new options say where the sensors are:
+  `climate` (a list of `place`, `temperature` and `humidity`, where place is
+  a room such as `bedroom` or `bath_upstairs`, or a floor: `upper`, `main`,
+  `basement`) and `weather` (a weather entity, e.g. `weather.forecast_home`).
+  Left empty, Huset shows no temperatures. The current app works as before.
+
 ## 0.1.28
 
 - Opening the add-on's Web UI in Home Assistant now shows the hub's health
