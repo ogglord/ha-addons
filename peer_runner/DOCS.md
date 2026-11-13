@@ -48,6 +48,7 @@ claude.ai, or if the refresh token expires unused.
 | `checkout` | A git checkout to work in, such as `/homeassistant` if HA's config is a repo. Each peer request gets its own worktree; Remote Control sessions start in the checkout. Empty uses `/data/work`. |
 | `remote_control` | Starts Remote Control. |
 | `remote_control_name` | The session's name in claude.ai/code. |
+| `ha_plugin` | The `homeassistant-config` plugin (ESJavadex/claude-homeassistant-plugins): skills for writing and checking HA YAML, and a hook that checks a YAML file after Claude edits it. The pinned copy ships with the add-on. |
 
 ## What runs can reach
 

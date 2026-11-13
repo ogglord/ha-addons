@@ -3,7 +3,7 @@
 # URL and any host-specific policy are set in the add-on's Configuration in HA.
 name: Peer runner
 description: Headless Claude Code and the homelab peer listener
-version: "0.1.0"
+version: "0.1.1"
 slug: peer_runner
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -57,6 +57,9 @@ options:
   # the Claude app. Needs the claude.ai login (DOCS.md).
   remote_control: true
   remote_control_name: Home Assistant
+  # ESJavadex/claude-homeassistant-plugins: HA YAML skills and a hook that
+  # checks YAML after every edit, for runs and Remote Control sessions.
+  ha_plugin: true
 schema:
   hub_url: url
   allow: [str]
@@ -68,3 +71,4 @@ schema:
   checkout: str?
   remote_control: bool
   remote_control_name: str
+  ha_plugin: bool

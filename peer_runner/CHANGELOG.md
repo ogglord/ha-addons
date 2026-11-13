@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- The Home Assistant config plugin (ESJavadex/claude-homeassistant-plugins
+  2.1.4): skills for HA YAML and a check after every YAML edit, in peer runs
+  and Remote Control sessions. Turn it off with `ha_plugin: false`.
+
 ## 0.1.0
 
 - First version: the peer listener and Claude Code Remote Control, headless.
