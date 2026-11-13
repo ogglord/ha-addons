@@ -4,6 +4,12 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.26
+
+- A small fix to 0.1.25: when a live video request failed, the add-on's log
+  showed the short-lived link the phone used. It no longer does. Nothing
+  needs re-pairing, and the app needs no update.
+
 ## 0.1.25
 
 - Alerts are harder to lose. If the connection to Apple's push service has
