@@ -1,14 +1,13 @@
 # Home Assistant add-on manifest. This file is published to the public
 # ogglord/ha-addons (ha_agent/), so it holds no personal values: the hub
 # URL and any host-specific policy are set in the add-on's Configuration in HA.
-name: HA Agent
+name: Hemma Agent
 description: Headless Claude Code and the homelab peer listener
-version: "0.2.4"
+version: "0.3.0"
 slug: ha_agent
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
-# The image keeps the repo's name (ogglord/ha-peer-runner).
-image: ghcr.io/ogglord/ha-peer-runner-{arch}
+image: ghcr.io/ogglord/hemma-agent-{arch}
 init: false
 startup: services
 boot: auto
@@ -43,7 +42,7 @@ options:
   # Auto mode's policy, prose rules. "$defaults" keeps Claude Code's built-ins.
   policy_environment:
     - "$defaults"
-    - "This is the Home Assistant OS box, inside the HA Agent add-on. The ha CLI and SUPERVISOR_TOKEN manage Home Assistant, its add-ons and its host."
+    - "This is the Home Assistant OS box, inside the Hemma Agent add-on. The ha CLI and SUPERVISOR_TOKEN manage Home Assistant, its add-ons and its host."
   policy_allow:
     - "$defaults"
   policy_hard_deny:

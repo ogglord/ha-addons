@@ -1,4 +1,4 @@
-# HA Agent
+# Hemma Agent
 
 Runs the homelab `peer` listener and Claude Code on this box, with no
 terminal and no web UI. Peer requests sent to host `homeassistant` run as
@@ -19,11 +19,11 @@ lets you start a session here from claude.ai/code or the Claude app.
 Remote Control needs the claude.ai login (your Max subscription); a
 `setup-token` is not enough for it. The add-on logs in by itself, with no SSH:
 
-1. When Claude is logged out, HA Agent sends a Hemma notification, "HA Agent:
-   logga in på Claude" (Hemma hub 0.1.32 and app 0.2.15 or later). The same
-   link is in this add-on's log.
+1. When Claude is logged out, this add-on sends a Hemma notification,
+   "Hemma Agent: logga in på Claude" (Hemma hub 0.1.32 and app 0.2.15 or
+   later). The same link is in this add-on's log.
 2. Tap **Logga in** and sign in on claude.ai. The page shows a code.
-3. A second notification, "HA Agent: skicka koden", arrives. Long-press it
+3. A second notification, "Hemma Agent: skicka koden", arrives. Long-press it
    (or pull the banner down), tap **Skicka kod**, paste the code and send.
    Without Hemma: Developer tools › Events, event type `ha_agent_login`,
    event data `code: <the code>`, Fire event.
@@ -39,7 +39,7 @@ or expires unused.
 
 Run `claude setup-token` on your Mac and paste the token into `claude_token`.
 Peer runs then use it instead of the claude.ai login, so they keep working
-whatever happens to it. It lasts a year; HA Agent warns you through Hemma a
+whatever happens to it. It lasts a year; the add-on warns you through Hemma a
 month before.
 
 ## Options

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0
+
+- Renamed Hemma Agent (was HA Agent): it is now part of the Hemma family,
+  built from the same repository as Hemma hub. The slug stays `ha_agent`, so
+  this is an ordinary update: options, login and data are kept. Its
+  notifications now start "Hemma Agent:".
+- The image is now `ghcr.io/ogglord/hemma-agent-amd64` (was
+  `ha-peer-runner-amd64`).
+
 ## 0.2.4
 
 - peer from homelab `d9d61c1`: `peer --version` prints the homelab commit,
