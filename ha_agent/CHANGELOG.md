@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.15
+
+- `ha-config` prints only the JSON, nothing on stderr either, so
+  `ha-config … 2>&1 | jq` works.
+
 ## 0.3.14
 
 - `ha-config` reads an automation's or a script's full config from HA, by
