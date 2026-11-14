@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.12
+
+- The log names a new Remote Control session by its title, with its link,
+  not by its state ("Attached").
+- No bashio deprecation warning at start (`bashio::app.version`).
+
 ## 0.3.11
 
 - peer from homelab aaef37d: `peer doctor` checks this box's identity with a
