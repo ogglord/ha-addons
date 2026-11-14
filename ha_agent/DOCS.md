@@ -69,8 +69,22 @@ reloads every 30 seconds:
 | `remote_control_name` | The name of Remote Control and of the sessions it starts, in claude.ai/code and the Claude app. |
 | `claude_token` | A `claude setup-token` token for peer runs (see above). |
 | `notify_script` | The HA script that reaches your phone: `hemma_notify_admin`. Empty: the log only. |
+| `install_releases` | Installs a new Hemma Hub or Hemma Agent within 30 s of its release being published (see below). `false`: you update them in HA. |
 | `log_level` | How much this add-on's log says: `info` (the default) logs requests, logins, sessions and anything wrong; `debug` adds the routine lines, such as the hub stream reconnecting and each run starting. |
 | `ha_plugin` | The `homeassistant-config` plugin (ESJavadex/claude-homeassistant-plugins): skills for writing and checking HA YAML, and a hook that checks a YAML file after Claude edits it. The pinned copy ships with the add-on. |
+
+## Installing releases
+
+With `install_releases` on (the default), this add-on watches the add-on
+repository it came from. When a release is published, it updates Hemma Hub
+straight away, then itself. A running peer request finishes first (up to 30
+minutes). A Remote Control session in use is cut off: start it again once the
+add-on is back, which takes about a minute. A failed update is in this log
+and comes to your phone through `notify_script`.
+
+The Supervisor doesn't let an add-on update itself, so this add-on asks Home
+Assistant to (`update.install` on its update entity). HA may take up to five
+minutes to see the new version, so the agent's own update can lag the hub's.
 
 ## What runs can reach
 

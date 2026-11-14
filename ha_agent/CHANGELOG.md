@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.13
+
+- Installs new Hemma Hub and Hemma Agent releases by itself, within about
+  30 s of CI publishing them: it watches ogglord/ha-addons and updates the
+  hub straight away. It updates itself last, through HA's `update.install`
+  (the Supervisor won't let an add-on update itself), once no peer request
+  is running. New option `install_releases` (default on). A failed update
+  comes to your phone.
+- Install this version by hand once: the earlier versions don't have the
+  watcher.
+
 ## 0.3.12
 
 - The log names a new Remote Control session by its title, with its link,
