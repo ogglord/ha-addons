@@ -88,7 +88,7 @@ minutes to see the new version, so the agent's own update can lag the hub's.
 
 ## What runs can reach
 
-`ha-ws-client` (HA's WebSocket API: states, registries, history, automation traces), `ha` (the Supervisor CLI), `addon-options` (another add-on's options, one key at a time, the rest kept), `curl`, `jq`, `yq`, `git`, `ssh`,
+`ha-ws-client` (HA's WebSocket API: states, registries, history, automation traces), `ha` (the Supervisor CLI), `ha-config` (an automation's or a script's config as HA loaded it, by its id or entity_id), `addon-options` (another add-on's options, one key at a time, the rest kept; `keys` lists them with no values), `curl`, `jq`, `yq`, `git`, `ssh`,
 `mosquitto_pub`/`mosquitto_sub`, HA's config at `/homeassistant`, and
 `/share`. The add-on has the Supervisor's `manager` role, so it can change
 other add-ons' options (a Mosquitto login, for example).

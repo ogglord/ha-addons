@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.14
+
+- `ha-config` reads an automation's or a script's full config from HA, by
+  its id or its entity_id (`ha-config automation hemma_nursery_crying
+  actions`). Checking what the hub wrote no longer means reading
+  `automations.yaml`.
+- `ha-config keys` and `addon-options keys` list every key path and its type,
+  with no values. Values come only when asked for by path, and secrets stay
+  masked. Names ending in `key`, and webhook ids, now count as secrets too.
+
 ## 0.3.13
 
 - Installs new Hemma Hub and Hemma Agent releases by itself, within about
