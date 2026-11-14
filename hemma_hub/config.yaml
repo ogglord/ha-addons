@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest (ADR 0003).
 name: Hemma hub
 description: Notifications and the nursery for the Hemma iOS app
-version: "0.1.32"
+version: "0.1.33"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -17,10 +17,13 @@ ingress_port: 8787
 watchdog: http://[HOST]:[PORT:8787]/livez
 ports:
   8787/tcp: 8787
+  8788/tcp: 8788
 ports_description:
-  8787/tcp: Hemma app on the LAN
+  8787/tcp: Plain http (the tunnel, the homelab, phones paired before TLS)
+  8788/tcp: Hemma app on the LAN (TLS, the certificate pinned at pairing)
 options:
-  # How phones reach this add-on on the home Wi-Fi.
+  # How phones reach this add-on on the home Wi-Fi: its host, on port 8788 over
+  # TLS (the hub makes a self-signed certificate that the phones pin).
   lan_url: http://homeassistant.local:8787
   tunnel_url: https://hemma.ogglord.com
   cf_access_client_id: ""

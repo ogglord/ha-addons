@@ -4,6 +4,15 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.33
+
+- Telefonerna pratar nu krypterat med hubben hemma på wifi:t. Hubben gör ett
+  eget certifikat första gången den startar och lyssnar på en ny port, 8788.
+  Telefonerna känner igen certifikatet, så en annan server på nätverket kan
+  varken läsa med eller logga ut dem. Parade telefoner hämtar certifikatet
+  via tunneln, utan att paras om. Det kräver nästa version av appen.
+- Den gamla okrypterade porten 8787 finns kvar för tunneln och homelabben.
+
 ## 0.1.32
 
 - Knappar i notiser kan nu öppna en länk i Safari, eller be om ett kort svar
