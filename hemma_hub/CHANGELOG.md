@@ -4,6 +4,11 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.44
+
+- Listan över parade telefoner talar om vilken version av appen varje
+  telefon kör (syns i appen när den uppdateras).
+
 ## 0.1.43
 
 - Huset visar dörrarna: öppen eller stängd, och sedan när. Källardörren nu,
