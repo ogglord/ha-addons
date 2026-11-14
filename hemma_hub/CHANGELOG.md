@@ -4,6 +4,15 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.36
+
+- Homelab-fliken har fått en underhållssida: kör nattens uppdatering,
+  uppdatera systemet eller starta om homelabben, direkt från telefonen.
+  Telefonen signerar varje kommando med sin egen nyckel, och homelabben gör
+  bara det som telefonen den känner igen har bett om. Hubben och Home
+  Assistant skickar bara vidare.
+- Sidan kräver nästa version av appen.
+
 ## 0.1.35
 
 - Huset visar nu bilen, laddboxen och datorn under ritningen. Bilen: om den
