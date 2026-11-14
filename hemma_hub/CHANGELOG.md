@@ -4,6 +4,13 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.37
+
+- Den gamla okrypterade porten 8787 är stängd mot nätverket hemma. Telefonerna
+  och homelabben pratar bara krypterat med hubben (port 8788). Tunneln når
+  hubben inne i Home Assistant, så den påverkas inte. En telefon som inte har
+  fått hubbens certifikat och saknar tunneln behöver paras om.
+
 ## 0.1.36
 
 - Homelab-fliken har fått en underhållssida: kör nattens uppdatering,
