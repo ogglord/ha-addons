@@ -4,6 +4,13 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.43
+
+- Huset visar dörrarna: öppen eller stängd, och sedan när. Källardörren nu,
+  ytterdörren, altandörrarna och gäststugan när deras sensorer är på plats.
+- Tv:arna i vardagsrummet och biorummet lyser i Huset när de är på.
+- Ställs in under `doors` och `tvs` i tilläggets inställningar.
+
 ## 0.1.42
 
 - Livebild som fryser (kameran slutar skicka) startar om av sig själv i
