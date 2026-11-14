@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.2
+
+- Claude's notes on this host say that `ha-ws-client --json` wraps its
+  output in `data`.
+
 ## 0.2.1
 
 - Tapping Logga in no longer loses the way back: a second notification,
