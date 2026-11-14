@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.8
+
+- `addon-options`: peer runs and Remote Control sessions can change another
+  add-on's options one key at a time (`addon-options set hemma_hub
+  car.entity=jax --restart`). It keeps every other option, validates before
+  it writes, and masks passwords and tokens in its output. The `ha` CLI
+  cannot write options, and peer's deny list blocks `curl` to the Supervisor.
+
 ## 0.3.7
 
 - Remote Control shows in claude.ai/code's environment list as
