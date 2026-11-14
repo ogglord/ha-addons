@@ -4,6 +4,13 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.39
+
+- Loggen är lättare att läsa: varje rad har tid, nivå och vad den gäller,
+  som i Hemma Agent. Kameraströmmar som startar och stannar syns inte längre;
+  fel syns i gult eller rött.
+- Ny inställning `log_level` (standard `info`). Med `debug` syns allt igen.
+
 ## 0.1.38
 
 - Nu heter tillägget Hemma Hub, med stort H, och har en egen ikon: det gula

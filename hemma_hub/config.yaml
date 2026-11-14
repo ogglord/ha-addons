@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest (ADR 0003).
 name: Hemma Hub
 description: Notifications and the nursery for the Hemma iOS app
-version: "0.1.38"
+version: "0.1.39"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -73,6 +73,9 @@ options:
   climate: []
   # The temperature outside in Huset: a weather entity, e.g. weather.forecast_home.
   weather: ""
+  # How much the log says: debug adds the routine lines (live streams
+  # starting and stopping).
+  log_level: info
   # Huset's car, EV charger and computer: each the prefix of its HA entities
   # (the same keys as hub/hemma.yaml). Empty entity: not shown.
   car:
@@ -145,6 +148,7 @@ schema:
       temperature: str
       humidity: str?
   weather: str?
+  log_level: list(debug|info|warning|error)?
   car:
     name: str?
     entity: str?
