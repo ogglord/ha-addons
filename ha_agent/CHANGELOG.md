@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.3
+
+- Remote Control no longer floods the add-on's log: it redraws its status
+  twice a second, and each line now reaches the log once per 10 minutes. A
+  change, such as a new session, still shows at once.
+
 ## 0.3.2
 
 - A Web UI: **Open Web UI** shows a status page, read only, like Hemma hub's.
