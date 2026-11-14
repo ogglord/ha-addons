@@ -4,6 +4,12 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.41
+
+- Städning: hubben skickar inte längre kameranamnet för varje rum till
+  appen, som inte använder det. Inget ändras för er; appen behöver Hemma
+  0.2.23 eller nyare.
+
 ## 0.1.40
 
 - Högtalaren säger inte längre att ett barn gråter: gråtlarmet går bara till
