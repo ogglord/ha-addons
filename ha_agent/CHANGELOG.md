@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.1
+
+- Fixes Remote Control restarting in a loop with "Enable Remote Control?
+  (y/n) ... got no answer". With no terminal to answer that one-time
+  question, the add-on now answers it itself before Remote Control starts.
+- The work folder is trusted right after the first login, so no restart is
+  needed after it.
+
 ## 0.3.0
 
 - Renamed Hemma Agent (was HA Agent): it is now part of the Hemma family,

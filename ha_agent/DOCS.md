@@ -79,5 +79,6 @@ your claude.ai account can start a session here. Turn it off with
   build fails peer's gate. Status and secrets still flow; requests wait.
 - **No notification:** check `notify_script`, and that the Hemma hub is
   0.1.32 or later. The link is in this log either way.
-- **Remote Control says the folder is untrusted:** restart the add-on once
-  after the first login. It marks the work folder trusted at start.
+- **Remote Control asks "Enable Remote Control? (y/n)" or says the folder is
+  untrusted:** the add-on answers both itself before Remote Control starts
+  (0.3.1 and later). On an older version, update.
