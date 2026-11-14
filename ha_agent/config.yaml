@@ -3,7 +3,7 @@
 # URL and any host-specific policy are set in the add-on's Configuration in HA.
 name: Hemma Agent
 description: Headless Claude Code and the homelab peer listener
-version: "0.3.4"
+version: "0.3.5"
 slug: ha_agent
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -60,7 +60,7 @@ options:
   # Claude Code Remote Control: a session on this box from claude.ai/code or
   # the Claude app. Needs the claude.ai login (DOCS.md).
   remote_control: true
-  remote_control_name: Home Assistant
+  remote_control_name: Home Assistant Agent
   # ESJavadex/claude-homeassistant-plugins: HA YAML skills and a hook that
   # checks YAML after every edit, for runs and Remote Control sessions.
   ha_plugin: true

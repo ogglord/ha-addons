@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.5
+
+- The sessions Remote Control starts are named after `remote_control_name`,
+  not the container's hostname (`<hash>-ha-agent`).
+- `remote_control_name` now defaults to "Home Assistant Agent". An existing
+  install keeps its saved name: change it in Configuration.
+
 ## 0.3.4
 
 - The Web UI showed Remote Control and the peer listener as not running when
