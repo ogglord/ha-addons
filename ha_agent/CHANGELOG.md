@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.3
+
+- The `peer` skill ships in the image from the same homelab commit as the
+  `peer` binary and is linked into Claude's user skills, so the notes Claude
+  reads match the CLI it calls and update with it.
+
 ## 0.2.2
 
 - Claude's notes on this host say that `ha-ws-client --json` wraps its
