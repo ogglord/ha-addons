@@ -4,6 +4,15 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.34
+
+- Hubben kan nu visa homelabben i appen, på en egen flik för administratörer:
+  översikt, tjänster, mätvärden, backuper och lagring, var man än är. Den
+  läser bara från homelabben. Att starta om en tjänst eller köra en backup
+  går via Home Assistant, med de knappar homelabben redan har där.
+- Fyll i `homelab_url` (homelabbens adress) i tilläggets inställningar för
+  att slå på det. Fliken kräver nästa version av appen.
+
 ## 0.1.33
 
 - Telefonerna pratar nu krypterat med hubben hemma på wifi:t. Hubben gör ett

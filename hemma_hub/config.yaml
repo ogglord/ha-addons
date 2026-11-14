@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest (ADR 0003).
 name: Hemma hub
 description: Notifications and the nursery for the Hemma iOS app
-version: "0.1.33"
+version: "0.1.34"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -37,6 +37,9 @@ options:
   go2rtc_url: http://homelab.local:1984
   # Frigate's API, for Utomhus (events, thumbnails). Empty: no outdoor events.
   frigate_url: ""
+  # The homelab's dashboard, for the Homelab tab (read only; actions go through HA).
+  # Empty: the tab says it isn't configured.
+  homelab_url: ""
   home_ssids: []
   # Gain on Lyssna's sound, dB (0-40). A sleeping child's room is near the camera's noise floor.
   listen_gain_db: 20
@@ -94,6 +97,7 @@ schema:
   homelab_token: password?
   go2rtc_url: url
   frigate_url: str?
+  homelab_url: str?
   home_ssids: [str]
   listen_gain_db: int(0,40)
   listen_denoise: bool?
