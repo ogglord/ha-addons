@@ -4,6 +4,13 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.45
+
+- Hemma kan dela telefonens plats med Home Assistant, i stället för
+  Companion-appen. En admin kopplar telefonen till en person under Admin ›
+  Parade telefoner; då vet huset när personen är hemma, borta eller i en
+  annan zon, även när wifi:t är av. Platsen hämtas strömsnålt.
+
 ## 0.1.44
 
 - Listan över parade telefoner talar om vilken version av appen varje
