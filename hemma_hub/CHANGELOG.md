@@ -4,6 +4,17 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.35
+
+- Huset visar nu bilen, laddboxen och datorn under ritningen. Bilen: om den
+  är låst, bränsle och räckvidd, om den står hemma och vad som är öppet, med
+  knappar för att förvärma, låsa och uppdatera (men inte låsa upp).
+  Laddboxen: om den laddar och hur mycket. Datorn: om den är på, och knappar
+  för att väcka den eller stänga av den.
+- Fyll i `car`, `charger` och `computer` (början på deras entiteter i Home
+  Assistant) i tilläggets inställningar för att visa dem. Korten kräver nästa
+  version av appen.
+
 ## 0.1.34
 
 - Hubben kan nu visa homelabben i appen, på en egen flik för administratörer:
