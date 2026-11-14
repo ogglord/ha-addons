@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.11
+
+- peer from homelab aaef37d: `peer doctor` checks this box's identity with a
+  read-only call instead of a hello, so the status page, which runs it about
+  once a minute while open, no longer makes the homelab's peer hub log a 409
+  every minute. Also in it: the peer client takes a run's token from a field,
+  not the environment (internal; the CLI behaves the same).
+
 ## 0.3.10
 
 - A cleaner log. Every line has one shape, `12:00:05 INFO  peer    …`, and
