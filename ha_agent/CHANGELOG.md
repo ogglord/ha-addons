@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.2
+
+- A Web UI: **Open Web UI** shows a status page, read only, like Hemma hub's.
+  It covers Claude Code (does it answer, is it logged in, the setup-token's
+  age), Remote Control (running, starting, or waiting for the login), the
+  peer listener (connected to the hub, gate verified) and `peer doctor`.
+  While a login waits for your code, the page says so.
+
 ## 0.3.1
 
 - Fixes Remote Control restarting in a loop with "Enable Remote Control?

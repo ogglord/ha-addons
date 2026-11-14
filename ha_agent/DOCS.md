@@ -1,7 +1,7 @@
 # Hemma Agent
 
 Runs the homelab `peer` listener and Claude Code on this box, with no
-terminal and no web UI. Peer requests sent to host `homeassistant` run as
+terminal. Its Web UI is a status page. Peer requests sent to host `homeassistant` run as
 headless `claude -p` in auto mode. Claude Code Remote Control (on by default)
 lets you start a session here from claude.ai/code or the Claude app.
 
@@ -41,6 +41,20 @@ Run `claude setup-token` on your Mac and paste the token into `claude_token`.
 Peer runs then use it instead of the claude.ai login, so they keep working
 whatever happens to it. It lasts a year; the add-on warns you through Hemma a
 month before.
+
+## The Web UI
+
+**Open Web UI** (or the sidebar, if you turn that on) shows, read only, and
+reloads every 30 seconds:
+
+- **Claude Code:** that it answers, the claude.ai login (and, when logged
+  out, whether a login waits for your code), the setup-token's age, and
+  Remote Control: running, starting, or waiting for the login, with a link
+  to it in claude.ai/code when it prints one.
+- **Peer:** whether the listener is connected to the hub, and its gate
+  (requests run only once the canary has verified it).
+- **peer doctor:** the path to the hub, this box's identity and its peer
+  capability, run at most once a minute.
 
 ## Options
 
