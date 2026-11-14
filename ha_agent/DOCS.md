@@ -20,7 +20,7 @@ Remote Control needs the claude.ai login (your Max subscription); a
 `setup-token` is not enough for it. The add-on logs in by itself, with no SSH:
 
 1. When Claude is logged out, this add-on sends a Hemma notification,
-   "Hemma Agent: logga in på Claude" (Hemma hub 0.1.32 and app 0.2.15 or
+   "Hemma Agent: logga in på Claude" (Hemma Hub 0.1.32 and app 0.2.15 or
    later). The same link is in this add-on's log.
 2. Tap **Logga in** and sign in on claude.ai. The page shows a code.
 3. A second notification, "Hemma Agent: skicka koden", arrives. Long-press it
@@ -91,7 +91,7 @@ your claude.ai account can start a session here. Turn it off with
   Proxmox or QEMU VM, set the CPU type to `host`.
 - **"gate verified" never appears:** Claude isn't logged in, or this Claude
   build fails peer's gate. Status and secrets still flow; requests wait.
-- **No notification:** check `notify_script`, and that the Hemma hub is
+- **No notification:** check `notify_script`, and that the Hemma Hub is
   0.1.32 or later. The link is in this log either way.
 - **Remote Control asks "Enable Remote Control? (y/n)" or says the folder is
   untrusted:** the add-on answers both itself before Remote Control starts

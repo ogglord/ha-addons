@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.9
+
+- An icon and a logo in HA's add-on store: the app's yellow house (Glöd)
+  with a shell prompt in the window, next to Hemma Hub's house with the heart
+  (`scripts/make-addon-icons.swift`). The docs say Hemma Hub.
+
 ## 0.3.8
 
 - `addon-options`: peer runs and Remote Control sessions can change another
