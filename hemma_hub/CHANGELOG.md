@@ -4,6 +4,18 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.42
+
+- Livebild som fryser (kameran slutar skicka) startar om av sig själv i
+  stället för att stå still tills hubben startas om.
+- Utomhus visar senaste händelsen för varje kamera, även den lugna när den
+  andra har mycket som händer. "Natt" för bilar räknas i HA:s tidszon.
+- Om hubben inte får skriva sina automationer i HA försöker den igen varje
+  minut. Tar ni bort ett rum ur inställningarna försvinner dess
+  hemma-hjälpare och automationer ur HA när hubben startar om.
+- Elpriset kommer tillbaka av sig själv om Nord Pool-integrationen läggs
+  till på nytt, och gårdagens priser visas aldrig som dagens.
+
 ## 0.1.41
 
 - Städning: hubben skickar inte längre kameranamnet för varje rum till
