@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.4
+
+- peer from homelab `d9d61c1`: `peer --version` prints the homelab commit,
+  and the listener reports it to the hub, so homelab's Peer page shows
+  whether this host is current or behind.
+- The peer skill is shorter, and its Home Assistant copy is gone: this host
+  reads the same skill as every other.
+
 ## 0.2.3
 
 - The `peer` skill ships in the image from the same homelab commit as the
