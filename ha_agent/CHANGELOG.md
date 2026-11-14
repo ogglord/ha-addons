@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.16
+
+- Claude on this box knows other add-ons' `/data` (the hub's `hemma.db`)
+  is out of reach, and says so at once instead of searching the
+  filesystem for it.
+
 ## 0.3.15
 
 - `ha-config` prints only the JSON, nothing on stderr either, so
