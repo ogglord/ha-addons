@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.7
+
+- Remote Control shows in claude.ai/code's environment list as
+  "agent · homeassistant", not "work · <hash>-ha-agent".
+- The work folder moved from `/data/work` to `/data/agent`, along with its
+  files and Claude's session history. (Its name is the first half of that
+  label.)
+
 ## 0.3.5
 
 - The sessions Remote Control starts are named after `remote_control_name`,

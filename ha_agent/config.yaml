@@ -3,7 +3,7 @@
 # URL and any host-specific policy are set in the add-on's Configuration in HA.
 name: Hemma Agent
 description: Headless Claude Code and the homelab peer listener
-version: "0.3.5"
+version: "0.3.7"
 slug: ha_agent
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -55,7 +55,7 @@ options:
   # Model for runs and Remote Control sessions. Empty: Claude's default.
   model: ""
   # A git checkout runs work in (one worktree per request), e.g.
-  # /homeassistant if HA's config is a git repo. Empty: /data/work.
+  # /homeassistant if HA's config is a git repo. Empty: /data/agent.
   checkout: ""
   # Claude Code Remote Control: a session on this box from claude.ai/code or
   # the Claude app. Needs the claude.ai login (DOCS.md).

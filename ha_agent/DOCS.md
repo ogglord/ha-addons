@@ -64,7 +64,7 @@ reloads every 30 seconds:
 | `allow`, `deny` | Tool rules in Claude Code's permission syntax. Empty uses peer's built-in lists. The built-in deny list has `curl` and `wget`, so add your own lists if runs need them. |
 | `policy_environment`, `policy_allow`, `policy_hard_deny` | Auto mode's prose rules for peer runs and Remote Control sessions. `$defaults` keeps Claude Code's built-ins. |
 | `model` | The model for runs and sessions. Empty uses Claude's default. |
-| `checkout` | A git checkout to work in, such as `/homeassistant` if HA's config is a repo. Each peer request gets its own worktree; Remote Control sessions start in the checkout. Empty uses `/data/work`. |
+| `checkout` | A git checkout to work in, such as `/homeassistant` if HA's config is a repo. Each peer request gets its own worktree; Remote Control sessions start in the checkout. Empty uses `/data/agent`. |
 | `remote_control` | Starts Remote Control. |
 | `remote_control_name` | The name of Remote Control and of the sessions it starts, in claude.ai/code and the Claude app. |
 | `claude_token` | A `claude setup-token` token for peer runs (see above). |
