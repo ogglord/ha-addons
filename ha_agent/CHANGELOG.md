@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.4
+
+- The Web UI showed Remote Control and the peer listener as not running when
+  they were. It now reads their state correctly, and says so when it cannot.
+
 ## 0.3.3
 
 - Remote Control no longer floods the add-on's log: it redraws its status
