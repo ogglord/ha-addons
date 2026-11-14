@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1
+
+- Tapping Logga in no longer loses the way back: a second notification,
+  "HA Agent: skicka koden", follows with only the Skicka kod reply.
+
 ## 0.2.0
 
 - Log in without SSH: when Claude is logged out, HA Agent sends the sign-in

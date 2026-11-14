@@ -3,7 +3,7 @@
 # URL and any host-specific policy are set in the add-on's Configuration in HA.
 name: HA Agent
 description: Headless Claude Code and the homelab peer listener
-version: "0.2.0"
+version: "0.2.1"
 slug: ha_agent
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]

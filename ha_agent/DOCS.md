@@ -23,7 +23,8 @@ Remote Control needs the claude.ai login (your Max subscription); a
    logga in på Claude" (Hemma hub 0.1.32 and app 0.2.15 or later). The same
    link is in this add-on's log.
 2. Tap **Logga in** and sign in on claude.ai. The page shows a code.
-3. Long-press the notification, tap **Skicka kod**, paste the code and send.
+3. A second notification, "HA Agent: skicka koden", arrives. Long-press it
+   (or pull the banner down), tap **Skicka kod**, paste the code and send.
    Without Hemma: Developer tools › Events, event type `ha_agent_login`,
    event data `code: <the code>`, Fire event.
 4. "Claude är inloggat" follows, and Remote Control and the peer listener
