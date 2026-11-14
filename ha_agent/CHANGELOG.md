@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.10
+
+- A cleaner log. Every line has one shape, `12:00:05 INFO  peer    …`, and
+  each start opens with a banner: the version, Claude Code, peer, the hub,
+  the work folder, the model and Remote Control.
+- peer's lines read as events ("request … from macbook: done in 23s,
+  $0.12"). The hub stream reconnecting every few minutes no longer shows,
+  unless it stays down for 30 s.
+- Remote Control logs what changes (connected, the environment link, a new
+  session, sessions in use) instead of its screen every 10 minutes.
+- s6-overlay's startup lines and its deprecation warning are gone.
+- New option `log_level` (default `info`): `debug` shows the routine lines
+  as well.
+
 ## 0.3.9
 
 - An icon and a logo in HA's add-on store: the app's yellow house (Glöd)

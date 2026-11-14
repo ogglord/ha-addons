@@ -3,7 +3,7 @@
 # URL and any host-specific policy are set in the add-on's Configuration in HA.
 name: Hemma Agent
 description: Headless Claude Code and the homelab peer listener
-version: "0.3.9"
+version: "0.3.10"
 slug: ha_agent
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -70,6 +70,9 @@ options:
   # The HA script that reaches the owner's phone (Hemma, with text replies:
   # hub 0.1.32+). The login link and token warnings go there. Empty: log only.
   notify_script: hemma_notify_admin
+  # How much the add-on's log says: debug adds the routine lines (the hub
+  # stream reconnecting, runs starting, the plugin).
+  log_level: info
 schema:
   hub_url: url
   allow: [str]
@@ -84,3 +87,4 @@ schema:
   ha_plugin: bool
   claude_token: password?
   notify_script: str?
+  log_level: list(debug|info|warning|error)?
