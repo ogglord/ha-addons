@@ -4,6 +4,13 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.40
+
+- Högtalaren säger inte längre att ett barn gråter: gråtlarmet går bara till
+  telefonerna. Ny inställning `announce_crying` under `nursery` (av som
+  standard); slå på den för att få tillbaka utropet. Högtalaren säger
+  fortfarande till om hubben slutar svara.
+
 ## 0.1.39
 
 - Loggen är lättare att läsa: varje rad har tid, nivå och vad den gäller,

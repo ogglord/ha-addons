@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest (ADR 0003).
 name: Hemma Hub
 description: Notifications and the nursery for the Hemma iOS app
-version: "0.1.39"
+version: "0.1.40"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -96,6 +96,9 @@ options:
     crying_seconds: 5
     escalate_seconds: 60
     speaker: ""
+    # Crying on the speaker too (after escalate_seconds without "Jag tar det").
+    # Off: crying only alerts the phones.
+    announce_crying: false
     # HA's Piper (Wyoming): local Swedish speech, works without the internet.
     tts: tts.piper
     tts_voice: sv_SE-lisa-medium
@@ -166,6 +169,7 @@ schema:
     crying_seconds: int(0,)
     escalate_seconds: int(0,)
     speaker: str?
+    announce_crying: bool?
     tts: str
     tts_voice: str?
     quiet_after_ack_minutes: int(0,)
