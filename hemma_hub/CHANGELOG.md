@@ -4,6 +4,12 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.46
+
+- Klipp från utomhuskamerorna som förut visade en svart bild går att spela
+  igen. När en kamera har tappat ljudet i sina inspelningar spelas klippet
+  upp utan ljud i stället för inte alls.
+
 ## 0.1.45
 
 - Hemma kan dela telefonens plats med Home Assistant, i stället för
