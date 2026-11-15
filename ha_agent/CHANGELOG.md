@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.3.17
+
+- SSH from your Mac, as a harness tab (`harness ssh hemma-agent`): new
+  option `ssh` (off by default). The add-on joins the tailnet as a node of
+  its own, `hemma-agent` (tag `tag:hemma-agent-ssh`), with Tailscale SSH: no
+  sshd and no keys. The tailnet policy decides who may log in (DOCS.md has
+  the snippet). It signs in through a Hemma notification, like Claude does.
+  Peer traffic still goes through the Tailscale add-on as `tag:ha-agent`.
+- In an SSH session you are root with `HOME=/data/home` and the add-on's
+  environment, so `claude` (the same login as Remote Control), `ha` and
+  `ha-ws-client` work as in a run.
+- `tmux` is installed.
+- An open SSH session holds this add-on's own update back (up to 30
+  minutes), as a peer run does. The Web UI shows SSH's state.
+- Claude on this box is told never to restart or update this add-on.
+
 ## 0.3.16
 
 - Claude on this box knows other add-ons' `/data` (the hub's `hemma.db`)

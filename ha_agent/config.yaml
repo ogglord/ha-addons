@@ -3,7 +3,7 @@
 # URL and any host-specific policy are set in the add-on's Configuration in HA.
 name: Hemma Agent
 description: Headless Claude Code and the homelab peer listener
-version: "0.3.16"
+version: "0.3.17"
 slug: ha_agent
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -28,7 +28,8 @@ map:
   - type: share
     read_only: false
 # Claude's caches and peer's run worktrees are rebuilt on demand; the login
-# (home/.claude/.credentials.json, home/.claude.json) is kept.
+# (home/.claude/.credentials.json, home/.claude.json) is kept. The SSH node's
+# key stays out of backups: a restored add-on signs in to the tailnet afresh.
 backup_exclude:
   - "home/.cache/**"
   - "home/.claude/cache/**"
@@ -36,6 +37,7 @@ backup_exclude:
   - "home/.claude/shell-snapshots/**"
   - "home/.local/share/claude/**"
   - "peer/runs/**"
+  - "tailscale/**"
 options:
   # The peer hub on the tailnet, e.g. http://100.x.y.z:7790. Required.
   hub_url: null
@@ -73,6 +75,11 @@ options:
   # Installs a new Hemma Hub or Hemma Agent as soon as CI publishes it (the
   # add-on repository's HEAD is checked every 30 s). false: update in HA.
   install_releases: true
+  # SSH from the owner's Mac (harness): this add-on joins the tailnet as its
+  # own node, with Tailscale SSH. The tailnet policy decides who may log in
+  # (DOCS.md). The sign-in link comes through notify_script.
+  ssh: false
+  ssh_hostname: hemma-agent
   # How much the add-on's log says: debug adds the routine lines (the hub
   # stream reconnecting, runs starting, the plugin).
   log_level: info
@@ -91,4 +98,6 @@ schema:
   claude_token: password?
   notify_script: str?
   install_releases: bool?
+  ssh: bool?
+  ssh_hostname: "match(^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$)?"
   log_level: list(debug|info|warning|error)?

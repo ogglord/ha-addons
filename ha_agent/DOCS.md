@@ -3,7 +3,9 @@
 Runs the homelab `peer` listener and Claude Code on this box, with no
 terminal. Its Web UI is a status page. Peer requests sent to host `homeassistant` run as
 headless `claude -p` in auto mode. Claude Code Remote Control (on by default)
-lets you start a session here from claude.ai/code or the Claude app.
+lets you start a session here from claude.ai/code or the Claude app. SSH
+(off by default) lets you open a terminal here from your Mac, as a harness
+tab.
 
 ## Before you start
 
@@ -70,8 +72,72 @@ reloads every 30 seconds:
 | `claude_token` | A `claude setup-token` token for peer runs (see above). |
 | `notify_script` | The HA script that reaches your phone: `hemma_notify_admin`. Empty: the log only. |
 | `install_releases` | Installs a new Hemma Hub or Hemma Agent within 30 s of its release being published (see below). `false`: you update them in HA. |
+| `ssh` | SSH from your Mac over Tailscale SSH (see below). Off by default. |
+| `ssh_hostname` | This add-on's name on the tailnet: `ssh root@<name>`. Default `hemma-agent`. |
 | `log_level` | How much this add-on's log says: `info` (the default) logs requests, logins, sessions and anything wrong; `debug` adds the routine lines, such as the hub stream reconnecting and each run starting. |
 | `ha_plugin` | The `homeassistant-config` plugin (ESJavadex/claude-homeassistant-plugins): skills for writing and checking HA YAML, and a hook that checks a YAML file after Claude edits it. The pinned copy ships with the add-on. |
+
+## SSH from your Mac (harness)
+
+With `ssh` on, this add-on joins your tailnet as a node of its own,
+`hemma-agent`, and runs Tailscale SSH: no sshd and no keys, and the tailnet
+policy decides who may log in. `harness ssh hemma-agent` then opens a
+terminal here as an ordinary harness tab. Claude Code started in it reports
+its status to harness, links open on your Mac, and copying works.
+
+The node runs Tailscale in userspace mode, beside the Tailscale add-on. Peer
+traffic keeps going through the Tailscale add-on, so the hub still sees this
+box as `tag:ha-agent`. The SSH node never carries that tag.
+
+### Setting it up
+
+1. In the tailnet policy (Tailscale's admin console), let yourself hand out
+   the tag, let only your Mac reach port 22, and let your user log in as root:
+
+   ```jsonc
+   "tagOwners": { "tag:hemma-agent-ssh": ["<you>"] },
+   "grants": [
+     // Only the Mac, and only SSH. Nothing goes from the tag anywhere.
+     { "src": ["<your Mac's 100.x address>"], "dst": ["tag:hemma-agent-ssh"], "ip": ["tcp:22"] }
+   ],
+   "ssh": [
+     { "action": "accept", "src": ["<you>"], "dst": ["tag:hemma-agent-ssh"], "users": ["root"] }
+   ]
+   ```
+
+   An SSH rule can't name a device, so the grant is what keeps it to the
+   Mac. Both have to allow a login.
+2. Turn on `ssh` and restart the add-on.
+3. A Hemma notification, "Hemma Agent: logga in på Tailscale", brings the
+   sign-in link (it is in this log too). Sign in as the tag's owner. A second
+   notification says when it is up.
+4. On the Mac, add the host to `~/.ssh/config`, so harness's **+** menu
+   lists it:
+
+   ```
+   Host hemma-agent
+     User root
+   ```
+
+The node's key is kept in `/data/tailscale`, so restarts and updates keep it
+signed in. It is left out of backups: after a restore it asks for a sign-in
+again. Remove the old `hemma-agent` machine in the admin console then.
+
+### In the session
+
+- You are root, `HOME` is `/data/home`, and the add-on's environment
+  (`SUPERVISOR_TOKEN` and the rest) is set, so `claude`, `ha`, `ha-ws-client`
+  and the other tools work as they do in a run. `claude` uses the same
+  claude.ai login as Remote Control. It asks before it uses a tool, as
+  Claude does at a terminal.
+- **tmux** is installed. It keeps a session through a dropped connection,
+  but not through an add-on restart or update. Start Claude straight in the
+  harness tab when you want harness to follow it: harness gets a new hook
+  socket on every login, so a Claude left running in tmux from an earlier
+  login no longer reports to harness.
+- An open SSH session holds this add-on's own update back, as a peer run
+  does (up to 30 minutes). A detached tmux session doesn't.
+- Never restart, stop or update this add-on from the session: that ends it.
 
 ## Installing releases
 
@@ -89,7 +155,7 @@ minutes to see the new version, so the agent's own update can lag the hub's.
 ## What runs can reach
 
 `ha-ws-client` (HA's WebSocket API: states, registries, history, automation traces), `ha` (the Supervisor CLI), `ha-config` (an automation's or a script's config as HA loaded it, by its id or entity_id), `addon-options` (another add-on's options, one key at a time, the rest kept; `keys` lists them with no values), `curl`, `jq`, `yq`, `git`, `ssh`,
-`mosquitto_pub`/`mosquitto_sub`, HA's config at `/homeassistant`, and
+`mosquitto_pub`/`mosquitto_sub`, `tmux`, HA's config at `/homeassistant`, and
 `/share`. The add-on has the Supervisor's `manager` role, so it can change
 other add-ons' options (a Mosquitto login, for example).
 
