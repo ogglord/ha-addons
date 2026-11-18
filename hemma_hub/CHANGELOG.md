@@ -4,6 +4,11 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.47
+
+- Hemlabbets aviseringar kommer på ett nytt sätt. Inget ändras på
+  telefonen.
+
 ## 0.1.46
 
 - Klipp från utomhuskamerorna som förut visade en svart bild går att spela
