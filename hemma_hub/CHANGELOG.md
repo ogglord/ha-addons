@@ -4,6 +4,12 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.48
+
+- Fliken Homelab fungerar igen. Den visar tjänsterna (starta om, starta och
+  stoppa), backuperna, CPU, minne och temperaturer. Loggar, lagring och
+  Underhåll är tomma tills vidare.
+
 ## 0.1.47
 
 - Hemlabbets aviseringar kommer på ett nytt sätt. Inget ändras på
