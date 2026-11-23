@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.20
+
+- A plain `peer` command (in Remote Control, over SSH or in a run) finds
+  the hub by itself: the add-on writes `hub_url` to
+  `/data/home/.config/peer/hub` at each start, where the CLI looks when no
+  `--hub` is given. Before, only the listener knew the hub's address.
+
 ## 0.3.19
 
 - `peer` at homelab-peer `ddc2c64`: adds `peer policy show`, which prints the
