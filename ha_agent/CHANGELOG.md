@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.21
+
+- `claude` over SSH no longer asks to trust the folder: an interactive SSH
+  shell starts in the work folder (`/data/agent`, or `checkout`) instead of
+  `/data/home`, and the add-on trusts that folder at each start. Claude Code
+  never remembers trusting the home folder, so it asked every time there.
+
 ## 0.3.20
 
 - A plain `peer` command (in Remote Control, over SSH or in a run) finds
