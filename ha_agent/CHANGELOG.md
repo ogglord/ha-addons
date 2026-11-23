@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.19
+
+- `peer` at homelab-peer `ddc2c64`: adds `peer policy show`, which prints the
+  policy runs are judged by. This add-on still writes its own policy from
+  its options, so runs behave as before.
+
 ## 0.3.18
 
 - `peer` and its skill come from ogglord/homelab-peer (`6d80afd`), where peer
