@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.18
+
+- `peer` and its skill come from ogglord/homelab-peer (`6d80afd`), where peer
+  now lives, instead of the archived ogglord/homelab. The hub's page shows
+  this listener as current again rather than behind.
+- The CLI has no `peer secret` any more: the hub carries no secret values.
+  Claude on this box is told to say so and stop when a request needs one.
+- The Web UI and the startup summary show the version as
+  `homelab-peer@<commit>`.
+
 ## 0.3.17
 
 - SSH from your Mac, as a harness tab (`harness ssh hemma-agent`): new
