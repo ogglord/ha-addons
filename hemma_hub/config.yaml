@@ -1,7 +1,7 @@
 # Home Assistant add-on manifest (ADR 0003).
 name: Hemma Hub
 description: Notifications and the nursery for the Hemma iOS app
-version: "0.1.49"
+version: "0.1.50"
 slug: hemma_hub
 url: https://github.com/ogglord/ha-addons
 arch: [amd64]
@@ -95,6 +95,8 @@ options:
   lists: []
   calendars: []
   calendar_days: 14
+  # IT: virtual machines (e.g. Devbox). Set in the add-on's Configuration in HA.
+  vms: []
   # The same keys as hub/hemma.yaml's nursery section.
   nursery:
     off_at: "23:00"
@@ -185,6 +187,10 @@ schema:
       name: str
       entity: str
   calendar_days: int(1,60)?
+  vms:
+    - id: str
+      name: str
+      entity: str
   nursery:
     off_at: match(^([01]\d|2[0-3]):[0-5]\d$)
     nap_from: match(^([01]\d|2[0-3]):[0-5]\d$)
