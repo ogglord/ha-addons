@@ -4,6 +4,12 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.49
+
+- Delade listor (`lists`, t.ex. Att handla) och kommande kalenderhändelser
+  (`calendars`, `calendar_days`) från Home Assistant till appens nya
+  Vardag-flik. Ställs in under tilläggets inställningar i Home Assistant.
+
 ## 0.1.48
 
 - Fliken Homelab fungerar igen. Den visar tjänsterna (starta om, starta och
