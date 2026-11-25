@@ -4,6 +4,14 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.53
+
+- När du importerar ett recept som innehåller en ingrediens med mängd som
+  redan finns på inköpslistan räknas mängderna ihop (till exempel 2 dl + 2 dl
+  crème fraiche blir 4 dl) och varan uppdateras på plats i stället för att
+  hoppas över. Stöder även att uppdatera befintliga varor och lägga till nya
+  i samma omgång.
+
 ## 0.1.52
 
 - Stöd för att prata in varor och importera ingredienser från receptlänkar
