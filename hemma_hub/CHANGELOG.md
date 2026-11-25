@@ -4,6 +4,12 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.51
+
+- Virtuella datorer under fliken IT (t.ex. Devbox) läser nu även hur länge
+  datorn varit vaken och varför den hålls igång (till exempel en aktiv
+  SSH-session eller process) från Home Assistant.
+
 ## 0.1.50
 
 - Stöd för virtuella datorer (t.ex. Devbox) under fliken IT: se status, starta,
