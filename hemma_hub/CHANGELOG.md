@@ -4,6 +4,13 @@ HA shows this in the add-on's update dialog. `scripts/release-hub.sh` adds a
 section for each release, drafted from the commit titles; rewrite it for the
 family.
 
+## 0.1.52
+
+- Stöd för att prata in varor och importera ingredienser från receptlänkar
+  (eller inklistrad recepttext) till inköpslistan under fliken Idag, via
+  Home Assistants AI Task-funktion (`ai_task`, upptäcks automatiskt eller
+  ställs in i tilläggets inställningar).
+
 ## 0.1.51
 
 - Virtuella datorer under fliken IT (t.ex. Devbox) läser nu även hur länge
