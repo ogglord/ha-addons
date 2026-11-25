@@ -4,8 +4,8 @@ Runs the homelab `peer` listener and Claude Code on this box, with no
 terminal. Its Web UI is a status page. Peer requests sent to host `homeassistant` run as
 headless `claude -p` in auto mode. Claude Code Remote Control (on by default)
 lets you start a session here from claude.ai/code or the Claude app. SSH
-(off by default) lets you open a terminal here from your Mac, as a harness
-tab.
+(off by default) lets you open a terminal here from your Mac or devbox over
+Tailscale SSH.
 
 ## Before you start
 
@@ -77,13 +77,13 @@ reloads every 30 seconds:
 | `log_level` | How much this add-on's log says: `info` (the default) logs requests, logins, sessions and anything wrong; `debug` adds the routine lines, such as the hub stream reconnecting and each run starting. |
 | `ha_plugin` | The `homeassistant-config` plugin (ESJavadex/claude-homeassistant-plugins): skills for writing and checking HA YAML, and a hook that checks a YAML file after Claude edits it. The pinned copy ships with the add-on. |
 
-## SSH from your Mac (harness)
+## SSH from your Mac or devbox
 
 With `ssh` on, this add-on joins your tailnet as a node of its own,
 `hemma-agent`, and runs Tailscale SSH: no sshd and no keys, and the tailnet
-policy decides who may log in. `harness ssh hemma-agent` then opens a
-terminal here as an ordinary harness tab. Claude Code started in it reports
-its status to harness, links open on your Mac, and copying works.
+policy decides who may log in. `ssh hemma-agent` then opens a terminal here
+over Tailscale SSH. Claude Code works interactively in it and links can be
+opened or copied locally.
 
 The node runs Tailscale in userspace mode, beside the Tailscale add-on. Peer
 traffic keeps going through the Tailscale add-on, so the hub still sees this
@@ -111,8 +111,7 @@ box as `tag:ha-agent`. The SSH node never carries that tag.
 3. A Hemma notification, "Hemma Agent: logga in på Tailscale", brings the
    sign-in link (it is in this log too). Sign in as the tag's owner. A second
    notification says when it is up.
-4. On the Mac, add the host to `~/.ssh/config`, so harness's **+** menu
-   lists it:
+4. On your client machine, add the host to `~/.ssh/config`:
 
    ```
    Host hemma-agent
@@ -131,10 +130,7 @@ again. Remove the old `hemma-agent` machine in the admin console then.
   claude.ai login as Remote Control. It asks before it uses a tool, as
   Claude does at a terminal.
 - **tmux** is installed. It keeps a session through a dropped connection,
-  but not through an add-on restart or update. Start Claude straight in the
-  harness tab when you want harness to follow it: harness gets a new hook
-  socket on every login, so a Claude left running in tmux from an earlier
-  login no longer reports to harness.
+  but not through an add-on restart or update.
 - An open SSH session holds this add-on's own update back, as a peer run
   does (up to 30 minutes). A detached tmux session doesn't.
 - Never restart, stop or update this add-on from the session: that ends it.

@@ -75,7 +75,7 @@ options:
   # Installs a new Hemma Hub or Hemma Agent as soon as CI publishes it (the
   # add-on repository's HEAD is checked every 30 s). false: update in HA.
   install_releases: true
-  # SSH from the owner's Mac (harness): this add-on joins the tailnet as its
+  # SSH over Tailscale SSH: this add-on joins the tailnet as its
   # own node, with Tailscale SSH. The tailnet policy decides who may log in
   # (DOCS.md). The sign-in link comes through notify_script.
   ssh: false
